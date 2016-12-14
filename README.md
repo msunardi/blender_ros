@@ -29,16 +29,20 @@
 #### ROS setup
 Everything here assumes ROS Indigo is installed and configured, including the Catkin workspace. If not, please follow the tutorials [here](wiki.ros.org/ROS/Tutorials) (Also make sure to follow the Indigo tutorials.)
   1. Clone this ROS package into the Catkin workspace:
-  ```
+
+    ```
     $ cd catkin_ws/src
     $ git clone https://github.com/msunardi/blender_ros.git
-  ```
+    ```
+
   2. (Assuming `arbotix_ros` is installed\*) Make sure the `blender_ros.launch` file points the `arbotix_driver` node to the `launch/arbotix_config_blender.yaml` file. This file defines the robot controller configuration, e.g.: servo IDs, servo names, limits, max/min speeds, etc.
     * Note: Also make sure the joint names in the `.yaml` file match the joint names in `blender_ros_subscrbier_node.py`.
   3. Run the subscriber node using the launch file
-  ```
+
+    ```
     $ roslaunch blender_ros blender_ros.launch
-  ```
+    ```
+
 
 #### Blender setup
   1. Launch Blender
