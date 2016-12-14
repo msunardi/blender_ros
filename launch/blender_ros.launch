@@ -1,0 +1,6 @@
+<launch>
+	<node name="arbotix" pkg="arbotix_python" type="arbotix_driver" output="screen">
+    	<rosparam file="$(find arbotix_controller)/launch/arbotix_config_blender_waitgesture.yaml" command="load" />
+  	</node>
+  	<node name="blender_ros_node" pkg="blender_ros" type="blender_ros_subscriber_node.py" />
+</launch>
