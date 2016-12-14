@@ -47,3 +47,6 @@ Everything here assumes ROS Indigo is installed and configured, including the Ca
   3. Click on the 'Run script' button to execute the script.
   4. Load an animation file/sequence and play it.
     * Note: as tested, the animation used was from a .bvh motion capture file and the joint angles used was from a skeleton/rig. Rename the objects in the `stream.py` to match the names of the object/skeleton/rig in the animation file.
+
+### Video
+<a href="https://www.youtube.com/watch?feature=player_embedded&v=kVInCRP2rSg" target="_blank"><img src="http://img.youtube.com/vi/kVInCRP2rSg/0.jpg" alt="Playing Motion Capture data on HR-OS1 robot (Jimmy)" width="240" height="180" border="10" /></a>
