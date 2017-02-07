@@ -22,6 +22,58 @@
 
 ### Quickstart:
 
+#### Redis setup
+Important notes: Blender uses Python 3.x [docs](https://docs.blender.org/api/blender_python_api_2_78a_release/info_quickstart.html). Therefore, it's recommended to install Redis for Python 3.x.
+  1. (Optional, but recommended) Create a Python virtualenv which uses Python 3.x. I use [venv](https://github.com/wuub/venv) which is a wrapper around [Virtualenv](https://virtualenv.pypa.io/en/stable/).
+
+    ```
+    # Install Virtualenv (if not already)
+    $ sudo pip install virtualenv
+    
+    # Clone venv (this shows installing in the home directory)
+    $ cd ~
+    $ git clone https://github.com/wuub/venv.git
+
+    # Source the venv script
+    $ cd venv
+    $ source venv.bash
+
+    # Create new environment named py3env and tell it to use Python 3.x
+    $ venv create py3env --python=/usr/bin/python3
+
+    # The environment will be created in ~/.venv
+    # Activate the environment
+    $ venv use py3env
+    (py3env)~/venv$ _ # This shows the environment is active
+
+    # Install Redis - it will only be installed for this environment
+    (p3env)~$ pip install redis
+    ```
+
+  2.  If not using a virtual environment, just do:
+
+    ```
+    $ [sudo] pip install redis
+    ```
+
+  3. Find the directory where Redis is installed.
+    - If with venv/virtualenv: `/home/<username>/.venv/py3env/lib/python3.x/site-packages/redis`
+    - If without: `/usr/local/lib/python3.x/dist-packages/redis`
+    Or something like those ...
+
+  4. Create a symlink in Blender's Python addons directory.
+    
+    ```
+    # Go to Blender's Python addon directory
+    $ cd /usr/share/blender/scripts/addons
+    $ sudo ln -s /home/<username>/.venv/py3env/lib/python3.x/site-packages/redis redis
+    ```
+
+  5. Test if Redis is loadable from Blender:
+    1. Launch Blender (re-launch if it's already open)
+    2. Open the Python console (CTRL + right x3)
+    3. In the Python console, type in `import redis` and hit Enter. If it works, no error message will show up.
+
 #### Robot controller setup
   1. Connect the servos to the Arbotix-M board
   2. Power the Arbotix-M board and connect to the computer via USB (requires an FTDI converter)
