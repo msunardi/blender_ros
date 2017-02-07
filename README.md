@@ -23,6 +23,11 @@
 ### Quickstart:
 
 #### Redis setup
+Make sure Redis is installed and running
+  1. Install Redis; follow the instructions [here](https://redis.io/topics/quickstart) - Highly recommended to follow the instructions until the *Installing Redis more properly* section.
+  2. Run the Redis server
+
+#### Redis-Python setup
 Important notes: Blender uses Python 3.x [docs](https://docs.blender.org/api/blender_python_api_2_78a_release/info_quickstart.html). Therefore, it's recommended to install Redis for Python 3.x.
   1. (Optional, but recommended) Create a Python virtualenv which uses Python 3.x. I use [venv](https://github.com/wuub/venv) which is a wrapper around [Virtualenv](https://virtualenv.pypa.io/en/stable/).
 
@@ -56,7 +61,7 @@ Important notes: Blender uses Python 3.x [docs](https://docs.blender.org/api/ble
     $ [sudo] pip install redis
     ```
 
-  3. Find the directory where Redis is installed.
+  3. Find the directory where Redis Python module is installed.
     - If with venv/virtualenv: `/home/<username>/.venv/py3env/lib/python3.x/site-packages/redis`
     - If without: `/usr/local/lib/python3.x/dist-packages/redis`
     Or something like those ...
@@ -69,7 +74,7 @@ Important notes: Blender uses Python 3.x [docs](https://docs.blender.org/api/ble
     $ sudo ln -s /home/<username>/.venv/py3env/lib/python3.x/site-packages/redis redis
     ```
 
-  5. Test if Redis is loadable from Blender:
+  5. Test if the Redis Python module is loadable from Blender:
     1. Launch Blender (re-launch if it's already open)
     2. Open the Python console (CTRL + right x3)
     3. In the Python console, type in `import redis` and hit Enter. If it works, no error message will show up.
